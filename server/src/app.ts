@@ -7,7 +7,7 @@ const PUERTO = 5000;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 //Rutas
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.send("Bienvenido grupo Baldi's Code Factory!");
 });
 

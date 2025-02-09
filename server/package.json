@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/app.js",
     "build": "tsc",
-    "server": "tsc && node --watch dist/app.js",
+    "server": "concurrently \"tsc --watch\" \"node --watch dist/app.js\"",
     "client": "cd ../client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
