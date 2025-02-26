@@ -7,7 +7,7 @@ export interface Product {
     stock: number;
   }  
   
-  const URL = 'http://localhost:3001/api/products';
+  const URL = 'http://localhost:3000/api/products';
   
   export async function getProducts(): Promise<Product[]> {
     const res = await fetch(URL);
