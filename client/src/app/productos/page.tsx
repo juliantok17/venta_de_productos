@@ -1,8 +1,17 @@
-export default function Productos() {
+import { getProducts } from '@/services/productClientService';
+
+
+
+
+export default async function Productos() {
+
+    const products = await getProducts();
     return (
-        <main>
+        <div>
             <h1>Productos</h1>
-            <p>Aquí mostraremos los productos</p>
-        </main>        
+            {products.map((p) => (
+                <div key={p._id}>{p.title}</div>
+            ))}
+        </div>
     );
 }
