@@ -1,5 +1,6 @@
 import express from "express"; 
 import productoRouter from "./routes/producto.router.js";
+//import "./dao/database.js";
 
 const app = express(); 
 const PUERTO = 5000;

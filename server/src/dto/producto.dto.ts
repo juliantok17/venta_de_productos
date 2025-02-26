@@ -1,4 +1,3 @@
-// product.dto.ts
 
 export class ProductDto {
   title: string;

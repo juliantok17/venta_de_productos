@@ -9,7 +9,7 @@ class ProductController {
       const products = await productService.getAllProducts();
       res.status(200).json(products);
     } catch (error) {
-      res.status(500).json({ message: 'Error retrieving products', error });
+      res.status(500).json({ message: 'Error al recuperar los productos', error });
     }
   }
 
@@ -17,28 +17,28 @@ class ProductController {
     try {
       const { id } = req.params;
       if (!id) {
-        res.status(400).json({ message: 'Invalid product id' });
+        res.status(400).json({ message: 'Id de producto invalido' });
         return;
       }
       const product = await productService.getProductById(id);
       if (!product) {
-        res.status(404).json({ message: 'Product not found' });
+        res.status(404).json({ message: 'Producto no encontrado' });
         return;
       }
       res.status(200).json(product);
     } catch (error) {
-      res.status(500).json({ message: 'Error retrieving product', error });
+      res.status(500).json({ message: 'Error al recuperar el producto', error });
     }
   }
 
   // Crea un nuevo producto
-  async create(req: Request, res: Response): Promise<void> {
+  async create(req: Request, res: Response): Promise<void> {    
     try {
-      const productData = req.body;
-      const newProduct = await productService.createProduct(productData);
+      const productData = req.body;      
+      const newProduct = await productService.createProduct(productData);          
       res.status(201).json(newProduct);
     } catch (error) {
-      res.status(500).json({ message: 'Error creating product', error });
+      res.status(500).json({ message: 'Error al crear el producto', error });
     }
   }
 
@@ -47,18 +47,18 @@ class ProductController {
     try {
       const { id } = req.params;
       if (!id) {
-        res.status(400).json({ message: 'Invalid product id' });
+        res.status(400).json({ message: 'Id de producto invalido' });
         return;
       }
       const productData = req.body;
       const updatedProduct = await productService.updateProduct(id, productData);
       if (!updatedProduct) {
-        res.status(404).json({ message: 'Product not found' });
+        res.status(404).json({ message: 'Producto no encontrado' });
         return;
       }
       res.status(200).json(updatedProduct);
     } catch (error) {
-      res.status(500).json({ message: 'Error updating product', error });
+      res.status(500).json({ message: 'Error al actualizar el producto', error });
     }
   }
 
@@ -67,17 +67,17 @@ class ProductController {
     try {
       const { id } = req.params;
       if (!id) {
-        res.status(400).json({ message: 'Invalid product id' });
+        res.status(400).json({ message: 'Id de producto invalido' });
         return;
       }
       const deletedProduct = await productService.deleteProduct(id);
       if (!deletedProduct) {
-        res.status(404).json({ message: 'Product not found' });
+        res.status(404).json({ message: 'Producto no encontrado' });
         return;
       }
       res.status(200).json(deletedProduct);
     } catch (error) {
-      res.status(500).json({ message: 'Error deleting product', error });
+      res.status(500).json({ message: 'Error al intentar borrar el producto', error });
     }
   }
 }

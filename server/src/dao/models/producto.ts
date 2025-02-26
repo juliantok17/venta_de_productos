@@ -1,6 +1,6 @@
 import mongoose, { Document } from "mongoose";
 
-const nombreCollection = "product"; 
+const nombreCollection = "products"; 
 
 export interface IProduct extends Document {
   title: string;

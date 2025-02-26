@@ -1,4 +1,3 @@
-// product.dto.ts
 export class ProductDto {
     constructor({ title, description, price, img, stock, }) {
         this.title = title;

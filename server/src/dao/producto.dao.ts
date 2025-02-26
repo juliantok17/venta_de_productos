@@ -11,8 +11,8 @@ class ProductDao {
   }
 
   // Crea un nuevo producto a partir de los datos del DTO
-  async create(productData: ProductDto): Promise<IProduct> {
-    const newProduct = new productModel(productData);
+  async create(productData: ProductDto): Promise<IProduct> {    
+    const newProduct = new productModel(productData);    
     return await newProduct.save();
   }
 

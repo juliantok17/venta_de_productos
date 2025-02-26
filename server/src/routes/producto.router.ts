@@ -1,4 +1,3 @@
-// routers/product.router.ts
 import { Router } from 'express';
 import productController from '../controllers/producto.controller.js';
 
