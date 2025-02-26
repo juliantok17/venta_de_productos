@@ -1,8 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
 
-//import mongoosePaginate from "mongoose-paginate-v2";
+const nombreCollection = "product"; 
 
-const nombreCollection = "products"; 
+export interface IProduct extends Document {
+  title: string;
+  description?: string | null;
+  price: number;
+  img: string;
+  stock: number;
+}
 
 const productSchema = new mongoose.Schema({
       title: {
@@ -18,13 +24,9 @@ const productSchema = new mongoose.Schema({
         min: 0
       },
       img: {
-        type: String        
-      },
-      code: {
         type: String,
-        required: true,
-        unique: true        
-      },
+        required: true       
+      },      
       stock: {
         type: Number,
         required: true,
@@ -33,7 +35,7 @@ const productSchema = new mongoose.Schema({
 })
 
 
-//productSchema.plugin(mongoosePaginate);
+
 
 const productModel = mongoose.model(nombreCollection, productSchema); 
 
