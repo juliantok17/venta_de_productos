@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-mongoose.connect("")
+mongoose.connect("mongodb+srv://juliantok17:tokonas@tokocluster.vahux.mongodb.net/VentaProductos?retryWrites=true&w=majority&appName=TokoCluster")
     .then(() => {
     console.log("Conectado a MongoDB");
 })
