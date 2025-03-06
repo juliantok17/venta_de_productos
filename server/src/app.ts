@@ -1,4 +1,6 @@
 import express from "express"; 
+import productoRouter from "./routes/producto.router.js";
+//import "./dao/database.js";
 
 const app = express(); 
 const PUERTO = 5000;
@@ -11,7 +13,7 @@ app.get('/', (req, res) => {
     res.send("Bienvenido grupo Baldi's Code Factory!");
 });
 
-
+app.use("/api/products", productoRouter);
 
 //Listen
 app.listen(PUERTO, () => {
